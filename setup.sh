@@ -3,7 +3,7 @@
 
 DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-ls "$DOTFILES" | grep -v '\.sh' | while read DOTFILE; do
+ls "$DOTFILES" | grep -v '\.sh' | grep -v '\.md' | while read DOTFILE; do
 	echo -n "Symlink to $DOTFILE..."
 	if [ -a "$HOME/.$DOTFILE" ]; then
 		if [ -h "$HOME/.$DOTFILE" ]; then
