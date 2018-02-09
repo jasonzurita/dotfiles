@@ -14,8 +14,8 @@ Plugin 'tpope/vim-fugitive' " plugin on GitHub repo
 Plugin 'vim-python/python-syntax' "https://github.com/vim-python/python-syntax
 let g:python_highlight_all = 1
 Plugin 'w0rp/ale'
-Plugin 'git@github.com:tpope/vim-unimpaired.git'
-Plugin 'git@github.com:ervandew/supertab.git' " allow tab completion
+Plugin 'tpope/vim-unimpaired.git' " some great key bindings like quickfix nav
+Plugin 'ervandew/supertab.git' " allow tab completion
 
 Plugin 'craigemery/vim-autotag'
 
