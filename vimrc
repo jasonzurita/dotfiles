@@ -16,6 +16,7 @@ let g:python_highlight_all = 1
 Plugin 'w0rp/ale'
 Plugin 'tpope/vim-unimpaired.git' " some great key bindings like quickfix nav
 Plugin 'ervandew/supertab.git' " allow tab completion
+Plugin 'reasonml-editor/vim-reason-plus' " https://github.com/reasonml-editor/vim-reason-plus
 
 Plugin 'craigemery/vim-autotag'
 
