@@ -18,7 +18,6 @@ Plugin 'tpope/vim-unimpaired.git' " some great key bindings like quickfix nav
 Plugin 'ervandew/supertab.git' " allow tab completion
 Plugin 'reasonml-editor/vim-reason-plus' " https://github.com/reasonml-editor/vim-reason-plus
 Plugin 'keith/swift.vim.git' " https://github.com/keith/swift.vim
-
 Plugin 'craigemery/vim-autotag'
 
 " All of your Plugins must be added before the following line
@@ -37,7 +36,7 @@ filetype plugin indent on   " required, load filetype-specific intend files
 " Put your non-Plugin stuff after this line
 
 " ALE (below settings make ale only run when a file is saved)
-let g:ale_lint_on_enter = 0 " disable ale from running when a file is opend
+let g:ale_lint_on_enter = 0 " disable ale from running when a file is opened
 let g:ale_lint_on_text_changed = 'never' " disable ale from running when text is changed
 let g:ale_lint_on_save = 1 " set ale to run when a file is saved
 " stifles errors for libraries (eg boto3) not yet in typeshed
