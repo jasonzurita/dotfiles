@@ -60,6 +60,7 @@ set hidden " leave file unsaved in current buffer
 set grepprg=ack " have grep use ack behind the scenes. install ack first: brew install ack
 set laststatus=2 " always show the vim status line
 set statusline=%<%f\ %{fugitive#statusline()}\ %h%m%r%=%y\ %-25.(L:%l,\ C:%c%V,\ Hex:%B%)\ %P " default status line with:
+set backspace=2 " make backspace work like most other programs
 " current git branch name added via fugitive, line/column number, current character hex value
 set spell spelllang=en_us " set spell checking :)
 
