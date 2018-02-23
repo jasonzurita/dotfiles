@@ -64,6 +64,7 @@ set backspace=2 " make backspace work like most other programs
 " current git branch name added via fugitive, line/column number, current character hex value
 set spell spelllang=en_us " set spell checking :)
 
+nmap <silent> <C-j> <Plug>(ale_next_wrap) " next ale error
 
 " map backspace and return to move faster in a file
 nnoremap <BS> 10k
