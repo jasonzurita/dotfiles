@@ -64,11 +64,11 @@ set backspace=2 " make backspace work like most other programs
 " current git branch name added via fugitive, line/column number, current character hex value
 set spell spelllang=en_us " set spell checking :)
 
-" map backspace and return to move faster in a file
-nnoremap <BS> {
-onoremap <BS> {
-vnoremap <BS> {
 
-nnoremap <expr> <CR> empty(&buftype) ? '}' : '<CR>'
-onoremap <expr> <CR> empty(&buftype) ? '}' : '<CR>'
-vnoremap <CR> }
+" map backspace and return to move faster in a file
+nnoremap <BS> 10k
+onoremap <BS> 10k
+vnoremap <BS> 10k
+nnoremap <expr> <CR> empty(&buftype) ? '10j' : '<CR>'
+onoremap <expr> <CR> empty(&buftype) ? '10j' : '<CR>'
+vnoremap <CR> 10j
