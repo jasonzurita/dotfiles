@@ -19,6 +19,9 @@ Plugin 'ervandew/supertab.git' " allow tab completion
 Plugin 'reasonml-editor/vim-reason-plus' " https://github.com/reasonml-editor/vim-reason-plus
 Plugin 'keith/swift.vim.git' " https://github.com/keith/swift.vim
 Plugin 'craigemery/vim-autotag'
+if has('conceal')
+  Plugin 'Yggdroot/indentLine' " display vertical lines at each indentation level
+endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
