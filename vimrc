@@ -64,6 +64,7 @@ set laststatus=2 " always show the vim status line
 set statusline=%<%f\ %{fugitive#statusline()}\ %h%m%r%=%y\ %-25.(L:%l,\ C:%c%V,\ Hex:%B%)\ %P " default status line with:
 set backspace=2 " make backspace work like most other programs
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab " use 4 spaces everywhere
+set wildmenu " visual autocomplete for command menu
 " current git branch name added via fugitive, line/column number, current character hex value
 set spell spelllang=en_us " set spell checking :)
 
