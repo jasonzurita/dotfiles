@@ -48,7 +48,9 @@ if filereadable("etc/pylintrc")
   let g:ale_python_pylint_options="--rcfile=etc/pylintrc"
 endif
 
-syntax on " turn syntax highlighting on
+if !exists("g:syntax_on")
+    syntax enable " turn syntax highlighting on
+endif
 colorscheme darcula
 set number " show line numbers
 set showcmd " show commands in bottom right
