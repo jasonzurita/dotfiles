@@ -1,0 +1,27 @@
+" See below for feature list
+" https://github.com/XVimProject/XVim2/blob/master/Documents/Users/FeatureList.md
+
+set number " show line numbers
+set incsearch " inline highlighting
+set hlsearch " highlight search
+set ignorecase " ignore case in search
+
+" map backspace and return to move faster in a file
+nnoremap <BS> 10k
+onoremap <BS> 10k
+vnoremap <BS> 10k
+nnoremap <CR> 10j
+onoremap <CR> 10j
+vnoremap <CR> 10j
+
+" Navigation
+nmap <space>n :nissue<CR>
+nmap <space>p :pissue<CR>
+
+" Show
+nmap <space>f :xccmd showInFinder<CR>
+
+" Toggle Toolbars
+nmap <space>h :xccmd toggleNavigatorsVisibility<CR>
+nmap <space>j :xccmd toggleDebuggerVisibility<CR>
+nmap <space>l :xccmd toggleUtilitiesVisibility<CR>
