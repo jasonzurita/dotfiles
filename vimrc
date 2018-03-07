@@ -77,3 +77,6 @@ vnoremap <BS> 10k
 nnoremap <expr> <CR> empty(&buftype) ? '10j' : '<CR>'
 onoremap <expr> <CR> empty(&buftype) ? '10j' : '<CR>'
 vnoremap <CR> 10j
+
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
