@@ -48,6 +48,8 @@ if filereadable("etc/pylintrc")
   let g:ale_python_pylint_options="--rcfile=etc/pylintrc"
 endif
 
+let g:indentLine_fileTypeExclude = ['json'] " don't conceal json files
+
 if !exists("g:syntax_on")
     syntax enable " turn syntax highlighting on
 endif
