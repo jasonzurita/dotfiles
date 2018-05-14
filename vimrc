@@ -70,6 +70,7 @@ set backspace=2 " make backspace work like most other programs
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab " use 4 spaces everywhere
 set wildmenu " visual autocomplete for command menu
 set spell spelllang=en_us " set spell checking :)
+autocmd BufNewFile,BufRead *.markdown syn match markdownIgnore "_" "turn off underscore highlighting
 
 nmap <silent> <C-j> <Plug>(ale_next_wrap) " next ale error
 
