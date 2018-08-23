@@ -70,8 +70,13 @@ set backspace=2 " make backspace work like most other programs
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab " use 4 spaces everywhere
 set wildmenu " visual autocomplete for command menu
 set spell spelllang=en_us " set spell checking :)
-autocmd BufNewFile,BufRead *.markdown syn match markdownIgnore "_" "turn off underscore highlighting
 set t_ti= t_te= " show results from terminal commands within vim!
+
+" turn off highlighting
+autocmd BufNewFile,BufRead *.markdown syn match markdownIgnore "_"
+autocmd BufNewFile,BufRead *.markdown syn match markdownIgnore "*"
+autocmd BufNewFile,BufRead *.md syn match markdownIgnore "_"
+autocmd BufNewFile,BufRead *.md syn match markdownIgnore "*"
 
 nmap <silent> <C-j> <Plug>(ale_next_wrap) " next ale error
 
