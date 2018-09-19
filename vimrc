@@ -73,6 +73,8 @@ set wildmenu " visual autocomplete for command menu
 set spell spelllang=en_us " set spell checking :)
 set t_ti= t_te= " show results from terminal commands within vim!
 
+" Show fugitive Gdiff in vertical windows
+set diffopt+=vertical
 
 " Set up statusline
 set laststatus=2 " always show the vim status line
