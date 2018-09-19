@@ -42,11 +42,15 @@ filetype plugin indent on   " required, load filetype-specific intend files
 let g:ale_lint_on_enter = 0 " disable ale from running when a file is opened
 let g:ale_lint_on_text_changed = 'never' " disable ale from running when text is changed
 let g:ale_lint_on_save = 1 " set ale to run when a file is saved
+
 " stifles errors for libraries (eg boto3) not yet in typeshed
 let g:ale_python_mypy_options = '--ignore-missing-imports' " mypy --ignore-missing imports
 if filereadable("etc/pylintrc")
   let g:ale_python_pylint_options="--rcfile=etc/pylintrc"
 endif
+
+let g:ale_open_list = 1 " show ale errors/warnings in quickfix
+
 
 let g:indentLine_fileTypeExclude = ['json'] " don't conceal json files
 
