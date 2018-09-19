@@ -67,14 +67,20 @@ set ruler " show current line number and line count
 set hls is " set highlight search and inline highlighting when typing a search
 set hidden " leave file unsaved in current buffer
 set grepprg=ack " have grep use ack behind the scenes. install ack first: brew install ack
-set laststatus=2 " always show the vim status line
-set statusline=%<%f\ %{fugitive#statusline()}\ %h%m%r%=%y\ %-25.(L:%l,\ C:%c%V,\ Hex:%B%)\ %P " default status line with:
-" ^^ current git branch name added via fugitive, line/column number, current character hex value
 set backspace=2 " make backspace work like most other programs
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab " use 4 spaces everywhere
 set wildmenu " visual autocomplete for command menu
 set spell spelllang=en_us " set spell checking :)
 set t_ti= t_te= " show results from terminal commands within vim!
+
+
+" Set up statusline
+set laststatus=2 " always show the vim status line
+set statusline+=%{fugitive#statusline()}
+set statusline+=%= " separate left status from right
+set statusline+=\ %y " file type
+set statusline+=\ L:%l,\ C:%c%V,\ Hex:%B " line, column, hex value under cursor
+set statusline+=\ %P " percent through file
 
 " turn off highlighting
 autocmd BufNewFile,BufRead *.markdown syn match markdownIgnore "_"
