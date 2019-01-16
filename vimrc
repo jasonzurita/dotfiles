@@ -19,6 +19,8 @@ Plugin 'ervandew/supertab.git' " allow tab completion
 Plugin 'reasonml-editor/vim-reason-plus' " https://github.com/reasonml-editor/vim-reason-plus
 Plugin 'keith/swift.vim.git' " https://github.com/keith/swift.vim
 Plugin 'craigemery/vim-autotag'
+Plugin 'pangloss/vim-javascript' " https://github.com/pangloss/vim-javascript
+Plugin 'mxw/vim-jsx' " https://github.com/mxw/vim-jsx
 if has('conceal')
   Plugin 'Yggdroot/indentLine' " display vertical lines at each indentation level
 endif
@@ -51,6 +53,7 @@ endif
 
 let g:ale_open_list = 1 " show ale errors/warnings in quickfix
 
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 let g:indentLine_fileTypeExclude = ['json'] " don't conceal json files
 
