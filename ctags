@@ -16,6 +16,10 @@
 --langdef=js
 --langmap=js:.js
 --langmap=js:+.jsx
+--exclude=*.chunk.js
+--exclude=*.min.js
+--exclude=*.min.css
+--exclude=main.bundle.js
 --regex-js=/[ \t.]([A-Z][A-Z0-9._$]+)[ \t]*[=:][ \t]*([0-9"'\[\{]|null)/\1/n,constant/
 --regex-js=/\.([A-Za-z0-9._$]+)[ \t]*=[ \t]*\{/\1/o,object/
 --regex-js=/['"]*([A-Za-z0-9_$]+)['"]*[ \t]*:[ \t]*\{/\1/o,object/
