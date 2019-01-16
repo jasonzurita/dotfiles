@@ -71,10 +71,15 @@ set hls is " set highlight search and inline highlighting when typing a search
 set hidden " leave file unsaved in current buffer
 set grepprg=ack " have grep use ack behind the scenes. install ack first: brew install ack
 set backspace=2 " make backspace work like most other programs
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab " use 4 spaces everywhere
 set wildmenu " visual autocomplete for command menu
 set spell spelllang=en_us " set spell checking :)
 set t_ti= t_te= " show results from terminal commands within vim!
+set ignorecase " ignore case when searcing with `/`. use `/\C` for case sensitive search
+
+" Set spacing
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+autocmd Filetype ruby setlocal softtabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype javascript setlocal softtabstop=2 shiftwidth=2 softtabstop=2
 
 " Show fugitive Gdiff in vertical windows
 set diffopt+=vertical
