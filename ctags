@@ -1,3 +1,5 @@
+--exclude=.git
+
 --langdef=swift 
 --langmap=swift:+.swift 
 --regex-swift=/enum[ \t]+([^\{\}]+).*$/\1/n,enum,enums/ 
