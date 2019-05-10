@@ -45,6 +45,10 @@ filetype plugin indent on " required, load filetype-specific intend files
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" set the <Leader> and <LocalLeader> to be the space bar
+let mapleader="\<Space>"
+let maplocalleader="\<Space>"
+
 " ALE (below settings make ale only run when a file is saved)
 let g:ale_lint_on_enter = 0 " disable ale from running when a file is opened
 let g:ale_lint_on_text_changed = 'never' " disable ale from running when text is changed
