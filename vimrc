@@ -89,6 +89,12 @@ set spell spelllang=en_us " set spell checking :)
 set t_ti= t_te= " show results from terminal commands within vim!
 set ignorecase " ignore case when searcing with `/`. use `/\C` for case sensitive search
 
+" search down into subfolders
+" provides tab-completion for all file-related tasks
+" 
+" can use `:find *{name}` to quickly find a file with partial name
+set path+=** 
+
 " Set spacing
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 autocmd Filetype ruby setlocal softtabstop=2 shiftwidth=2 softtabstop=2
