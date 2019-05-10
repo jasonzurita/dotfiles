@@ -24,7 +24,9 @@ Plugin 'mxw/vim-jsx' " https://github.com/mxw/vim-jsx
 if has('conceal')
   Plugin 'Yggdroot/indentLine' " display vertical lines at each indentation level
 endif
-
+" plugins for vim language server protocol support (per https://github.com/prabirshrestha/vim-lsp)
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/vim-lsp'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on   " required, load filetype-specific intend files
