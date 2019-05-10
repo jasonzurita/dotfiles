@@ -21,6 +21,7 @@ Plugin 'keith/swift.vim.git' " https://github.com/keith/swift.vim
 Plugin 'craigemery/vim-autotag'
 Plugin 'pangloss/vim-javascript' " https://github.com/pangloss/vim-javascript
 Plugin 'leafgarland/typescript-vim' " https://github.com/leafgarland/typescript-vim
+Plugin 'dart-lang/dart-vim-plugin' " https://github.com/dart-lang/dart-vim-plugin
 Plugin 'mxw/vim-jsx' " https://github.com/mxw/vim-jsx
 if has('conceal')
   Plugin 'Yggdroot/indentLine' " display vertical lines at each indentation level
@@ -59,6 +60,10 @@ let g:ale_open_list = 1 " show ale errors/warnings in quickfix
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 let g:indentLine_fileTypeExclude = ['json'] " don't conceal json files
+
+" Dart
+let dart_format_on_save = 1 " run :DartFmt on save
+let dart_style_guide = 2 " enabled style guide syntax (like 2-space indentation)
 
 if !exists("g:syntax_on")
     syntax enable " turn syntax highlighting on
@@ -113,3 +118,13 @@ endif
 
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
+" -- Dart --
+if executable('dart_language_server')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'dart_language_server',
+        \ 'cmd': {server_info->['dart_language_server']},
+        \ 'whitelist': ['dart'],
+        \ })
+    nnoremap <Leader>d :LspHover<cr>
+endif
+
