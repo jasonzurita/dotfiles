@@ -139,3 +139,11 @@ if executable('dart_language_server')
     nnoremap <Leader>d :LspHover<cr>
 endif
 
+function! HotReload() abort
+  if !empty(glob("/tmp/flutter.pid"))
+    silent execute '!kill -SIGUSR1 "$(cat /tmp/flutter.pid)"'
+  endif
+endfunction
+autocmd BufWritePost *.dart call HotReload()
+
+
