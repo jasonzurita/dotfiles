@@ -101,6 +101,14 @@ autocmd BufNewFile,BufRead *.md syn match markdownIgnore "_"
 autocmd BufNewFile,BufRead *.md syn match markdownIgnore "*"
 
 nmap <silent> <C-j> <Plug>(ale_next_wrap) " next ale error
+" connect to the swift source kit lsp
+if executable('sourcekit-lsp')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'sourcekit-lsp',
+        \ 'cmd': {server_info->['sourcekit-lsp']},
+        \ 'whitelist': ['swift'],
+        \ })
+endif
 
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
