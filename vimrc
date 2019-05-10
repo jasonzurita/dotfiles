@@ -20,6 +20,7 @@ Plugin 'reasonml-editor/vim-reason-plus' " https://github.com/reasonml-editor/vi
 Plugin 'keith/swift.vim.git' " https://github.com/keith/swift.vim
 Plugin 'craigemery/vim-autotag'
 Plugin 'pangloss/vim-javascript' " https://github.com/pangloss/vim-javascript
+Plugin 'leafgarland/typescript-vim' " https://github.com/leafgarland/typescript-vim
 Plugin 'mxw/vim-jsx' " https://github.com/mxw/vim-jsx
 if has('conceal')
   Plugin 'Yggdroot/indentLine' " display vertical lines at each indentation level
