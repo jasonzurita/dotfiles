@@ -49,6 +49,9 @@ filetype plugin indent on " required, load filetype-specific intend files
 let mapleader="\<Space>"
 let maplocalleader="\<Space>"
 
+" map {space bar + o} to open current buffer directory
+nnoremap <Leader>o :!open %:h<cr>
+
 " ALE (below settings make ale only run when a file is saved)
 let g:ale_lint_on_enter = 0 " disable ale from running when a file is opened
 let g:ale_lint_on_text_changed = 'never' " disable ale from running when text is changed
