@@ -78,7 +78,7 @@ if !exists("g:syntax_on")
 endif
 colorscheme darcula
 set number " show line numbers
-set wrap lbr "wrap whole words instead of breaking words up
+set wrap lbr " wrap whole words instead of breaking words up
 set showcmd " show commands in bottom right
 set showmatch " highlight matching [{(
 set cursorline " highlight current line
