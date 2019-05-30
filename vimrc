@@ -79,6 +79,7 @@ endif
 colorscheme darcula
 set number " show line numbers
 set wrap lbr " wrap whole words instead of breaking words up
+set autoindent " Copy indent from current line when starting an new line (works nicely with format option `n` for lists)
 set showcmd " show commands in bottom right
 set showmatch " highlight matching [{(
 set cursorline " highlight current line
