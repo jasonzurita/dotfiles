@@ -3,8 +3,9 @@
 
 DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# TODO: the below `grep -v` ignore is not scalable. Eventually, I will need a better solution.
 # simlink dotfiles
-ls "$DOTFILES" | grep -v '\.sh' | grep -v '\.md' | while read DOTFILE; do
+ls "$DOTFILES" | grep -v '\.sh' | grep -v '\.md' | grep -v '\.add' | while read DOTFILE; do
 	echo -n "Symlink to $DOTFILE..."
 	if [ -a "$HOME/.$DOTFILE" ]; then
 		if [ -h "$HOME/.$DOTFILE" ]; then
@@ -30,6 +31,23 @@ fi
 echo " copying darcula theme to ~/.vim/colors..."
 mkdir -p "$HOME/.vim/colors/"
 cp "$HOME/darcula/colors/darcula.vim" "$HOME/.vim/colors/"
+
+# symlink vim spell file
+# TODO: consider combining with above symlink code
+echo -n "Symlink vim spell file..."
+mkdir -p "$HOME/.vim/spell/"
+if [ -a "$HOME/.vim/spell/en.utf-8.add" ]; then
+    if [ -h "$HOME/.vim/spell/en.utf-8.add" ]; then
+        echo " exists."
+    else
+        echo " is not a symlink!"
+        echo "You should probably fix that."
+        exit 1
+    fi
+else
+    echo " creating..."
+    ln -s "$DOTFILES/en.utf-8.add" "$HOME/.vim/spell/en.utf-8.add"
+fi
 
 # install vundle
 echo -n "Installing Vundle..."

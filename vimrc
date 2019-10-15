@@ -90,6 +90,7 @@ set grepprg=ack " have grep use ack behind the scenes. install ack first: brew i
 set backspace=2 " make backspace work like most other programs
 set wildmenu " visual autocomplete for command menu
 set spell spelllang=en_us " set spell checking :)
+set spellfile=~/.vim/spell/en.utf-8.add " set spell file
 set t_ti= t_te= " show results from terminal commands within vim!
 set ignorecase " ignore case when searcing with `/`. use `/\C` for case sensitive search
 
