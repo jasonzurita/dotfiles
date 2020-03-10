@@ -15,6 +15,7 @@ Plugin 'vim-python/python-syntax' "https://github.com/vim-python/python-syntax
 let g:python_highlight_all = 1
 Plugin 'w0rp/ale'
 Plugin 'tpope/vim-unimpaired.git' " some great key bindings like quickfix nav
+Plugin 'tpope/vim-vinegar' " https://github.com/tpope/vim-vinegar
 Plugin 'ervandew/supertab.git' " allow tab completion
 Plugin 'reasonml-editor/vim-reason-plus' " https://github.com/reasonml-editor/vim-reason-plus
 Plugin 'keith/swift.vim.git' " https://github.com/keith/swift.vim
