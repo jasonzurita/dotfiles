@@ -108,9 +108,6 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 autocmd Filetype ruby setlocal softtabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype javascript setlocal softtabstop=2 shiftwidth=2 softtabstop=2
 
-" Show fugitive Gdiff in vertical windows
-set diffopt+=vertical
-
 " Set up statusline
 set laststatus=2 " always show the vim status line
 set statusline+=%{fugitive#statusline()}
