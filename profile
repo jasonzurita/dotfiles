@@ -20,13 +20,9 @@ HISTFILESIZE=10000 # number of commands in the history file
 export EDITOR=vim
 
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="$HOME/.fastlane/bin:$PATH"
 
 # This loads rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# Set Flutter Path environment variable
-export PATH="/usr/local/flutter/bin:$PATH"
 
 # Add Dart language server to path
 export PATH="$PATH":"$HOME/.pub-cache/bin"
@@ -34,9 +30,12 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 # Add ctags to path (for some reason the Xcode ctags was being referenced...)
 export PATH="$PATH":"/usr/local/bin/ctags"
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 export PATH="$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Set Flutter Path environment variable
+export PATH="/usr/local/flutter/bin:$PATH"
 
 # Setup go
 export PATH=$PATH:/usr/local/go/bin
@@ -46,7 +45,6 @@ export PATH=$PATH:$(go env GOPATH)/bin
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
