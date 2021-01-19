@@ -21,16 +21,11 @@ export EDITOR=vim
 
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
-# This loads rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # Add Dart language server to path
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Add ctags to path (for some reason the Xcode ctags was being referenced...)
 export PATH="$PATH":"/usr/local/bin/ctags"
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export PATH="$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin"
 
@@ -49,4 +44,5 @@ export NVM_DIR="$HOME/.nvm"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 echo "done"
