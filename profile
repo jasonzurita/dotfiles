@@ -11,6 +11,10 @@ alias vimgrep="$HOME/Work/scripts/vimgrep.sh"
 
 alias gitforceup="git add . && git commit --amend --no-edit && git push -f"
 
+vman() {
+    man "$1" | col -b | vim -
+}
+
 shopt -s histappend # make sure to append to history file
 # Append to bash history immediately
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
