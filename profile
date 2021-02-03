@@ -11,8 +11,9 @@ alias vimgrep="$HOME/Work/scripts/vimgrep.sh"
 
 alias gitforceup="git add . && git commit --amend --no-edit && git push -f"
 
+# Open man page in vim (e.g., man open)
 vman() {
-    man "$1" | col -b | vim -
+    man $* | col -b | vim -c 'set ft=man nomod nolist' -
 }
 
 shopt -s histappend # make sure to append to history file
