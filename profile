@@ -4,7 +4,7 @@ alias l="ls -al"
 alias pomodoro="cd $HOME/Dropbox/notes/pomodoro/2021 && vim activity_list.md  +\"vs results.md\" +\"vs to_do_today.md\""
 alias notes="cd $HOME/Dropbox/notes && ls -al"
 
-alias projects="cd $HOME/Work/projects && l"
+alias learn="cd $HOME/Dropbox/learn && l"
 alias blog="cd $HOME/Work/other/jasonzurita.github.io && l"
 
 alias vimgrep="$HOME/Work/scripts/vimgrep.sh"
