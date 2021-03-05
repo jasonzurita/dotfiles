@@ -1,7 +1,7 @@
 echo -n "Loading profile..."
 
 alias l="ls -al"
-alias pomodoro="cd $HOME/Dropbox/notes/pomodoro/2021 && vim activity_list.md  +\"vs results.md\" +\"vs to_do_today.md\""
+alias pomodoro="cd $HOME/Dropbox/notes/pomodoro/2021 && vim results.md +\"vs to_do_today.md\" +\"vs activity_list.md\""
 alias notes="cd $HOME/Dropbox/notes && ls -al"
 
 alias learn="cd $HOME/Dropbox/learn && l"
