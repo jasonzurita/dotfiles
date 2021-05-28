@@ -16,7 +16,7 @@ vman() {
     man $* | col -b | vim -c 'set ft=man nomod nolist' -
 }
 
-shopt -s histappend # make sure to append to history file
+setopt share_history append_history extended_history
 # Append to bash history immediately
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 HISTSIZE=5000 # number of commands in memory for the current session
@@ -65,7 +65,5 @@ eval "$(jenv init -)"
 # Setup for rbenv
 eval "$(rbenv init -)"
 
-export PATH="$PATH:/usr/sbin/"
-export PATH="$PATH:/sbin/"
 
 echo "done"
