@@ -24,6 +24,8 @@ HISTFILESIZE=10000 # number of commands in the history file
 
 export EDITOR=vim
 
+export WORKON_HOME=$HOME/.virtualenvs
+
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Add Dart language server to path
@@ -31,6 +33,8 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Add ctags to path (for some reason the Xcode ctags was being referenced...)
 export PATH="$PATH":"/usr/local/bin/ctags"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export PATH="$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin"
 
@@ -47,13 +51,21 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export PATH="/usr/local/opt/llvm/bin:$PATH"
-
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export VIRTUALENVWRAPPER_PYTHON=$HOME/.pyenv/shims/python
+eval "$(pyenv init -)"
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+
+# Setup for jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# Setup for rbenv
+eval "$(rbenv init -)"
+
+export PATH="$PATH:/usr/sbin/"
+export PATH="$PATH:/sbin/"
 
 echo "done"
