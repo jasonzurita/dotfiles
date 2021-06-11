@@ -65,5 +65,6 @@ eval "$(jenv init -)"
 # Setup for rbenv
 eval "$(rbenv init -)"
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo "done"
