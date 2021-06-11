@@ -5,7 +5,7 @@ alias pomodoro="cd $HOME/Dropbox/notes/pomodoro/2021 && vim results.md +\"vs to_
 alias notes="cd $HOME/Dropbox/notes && ls -al"
 
 alias learn="cd $HOME/Dropbox/learn && l"
-alias blog="cd $HOME/Work/other/jasonzurita.github.io && l"
+alias blog="cd $HOME/Code/jasonzurita.github.io && docker-compose up"
 
 alias vimgrep="$HOME/Work/scripts/vimgrep.sh"
 
