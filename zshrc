@@ -61,6 +61,8 @@ eval "$(pyenv init -)"
 export VIRTUALENVWRAPPER_PYTHON=$HOME/.pyenv/shims/python
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 
+# asdf setup
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Setup for rbenv
 eval "$(rbenv init -)"
@@ -71,5 +73,6 @@ if [ -f '/Users/jasonzurita/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jas
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jasonzurita/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jasonzurita/google-cloud-sdk/completion.zsh.inc'; fi
 
+export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
 
 echo "done"
