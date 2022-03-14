@@ -61,9 +61,6 @@ eval "$(pyenv init -)"
 export VIRTUALENVWRAPPER_PYTHON=$HOME/.pyenv/shims/python
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 
-# Setup for jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
 
 # Setup for rbenv
 eval "$(rbenv init -)"
