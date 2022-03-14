@@ -21,6 +21,7 @@ Plugin 'reasonml-editor/vim-reason-plus' " https://github.com/reasonml-editor/vi
 Plugin 'keith/swift.vim.git' " https://github.com/keith/swift.vim
 Plugin 'craigemery/vim-autotag'
 Plugin 'pangloss/vim-javascript' " https://github.com/pangloss/vim-javascript
+Plugin 'elixir-editors/vim-elixir' "https://github.com/elixir-editors/vim-elixir
 Plugin 'leafgarland/typescript-vim' " https://github.com/leafgarland/typescript-vim
 Plugin 'dart-lang/dart-vim-plugin' " https://github.com/dart-lang/dart-vim-plugin
 Plugin 'mxw/vim-jsx' " https://github.com/mxw/vim-jsx
