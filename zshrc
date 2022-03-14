@@ -36,16 +36,10 @@ export PATH="$PATH":"/usr/local/bin/ctags"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-export PATH="$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin"
-
 # Set Flutter Path environment variable
 export PATH="/usr/local/flutter/bin:$PATH"
 
-# Setup go
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$(go env GOPATH)/bin
-
-# Set up node version manager (nvm - https://github.com/nvm-sh/nvm#git-install)
+# Set up node version manager [nvm](https://github.com/nvm-sh/nvm#git-install)
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
@@ -54,8 +48,17 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-export VIRTUALENVWRAPPER_PYTHON=$HOME/.pyenv/shims/python
+# Setup homebrew for M1 (setup for hombrew-ed installed tools must come after this)
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Setup go
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$(go env GOPATH)/bin
+
+# Setup for [pyenv](https://github.com/pyenv/pyenv)
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
+export VIRTUALENVWRAPPER_PYTHON=$HOME/.pyenv/shims/python
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 
 # Setup for jenv
@@ -65,6 +68,5 @@ eval "$(jenv init -)"
 # Setup for rbenv
 eval "$(rbenv init -)"
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo "done"
