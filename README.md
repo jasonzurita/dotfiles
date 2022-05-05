@@ -6,6 +6,7 @@
     </a>
 </p>
 
-To use, simply clone and run `setup.sh`.
+- To use, simply clone and run `setup.sh`.
+- Nice short overview of [ctags](https://github.com/mmorearty/elixir-ctags#what-is-this-exuberant-ctags-thing-and-how-do-i-use-it)
 
 Based on https://github.com/rhowardiv/dotfiles
