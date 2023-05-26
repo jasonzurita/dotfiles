@@ -11,6 +11,7 @@ alias vimgrep="$HOME/Work/scripts/vimgrep.sh"
 
 alias gitforceup="git add . && git commit --amend --no-edit && git push -f"
 
+alias sformat="swiftformat . --config .swiftformat"
 # Open man page in vim (e.g., man open)
 vman() {
     man $* | col -b | vim -c 'set ft=man nomod nolist' -
