@@ -41,6 +41,7 @@ Plugin 'Zaptic/elm-vim'
 " Language server protocol support (per https://github.com/prabirshrestha/vim-lsp)
 Plugin 'prabirshrestha/async.vim'
 Plugin 'prabirshrestha/vim-lsp'
+Plugin 'mattn/vim-lsp-settings'
 
 " All of your Plugins must be added before the following line
 call vundle#end() " required
@@ -162,5 +163,4 @@ function! HotReload() abort
   endif
 endfunction
 autocmd BufWritePost *.dart call HotReload()
-
 
