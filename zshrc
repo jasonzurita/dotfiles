@@ -17,6 +17,12 @@ vman() {
     man $* | col -b | vim -c 'set ft=man nomod nolist' -
 }
 
+# Open iOS simulator document directory given the bundle id (e.g., iosappfolder com.company.bundleId)
+alias iosappfolder='function _inspect(){ appfolder $1 };_inspect'
+appfolder() {
+    open `xcrun simctl get_app_container booted "$1" data` -a Finder
+}
+
 setopt share_history append_history extended_history
 # Append to bash history immediately
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
