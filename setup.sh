@@ -60,4 +60,7 @@ else
 	vim +PluginInstall +qall
 fi
 
+# make scripts executable
+chmod +x "$DOTFILES/scripts/vimgrep.sh"
+
 echo "Done."
