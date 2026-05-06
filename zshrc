@@ -5,11 +5,13 @@ alias pomodoro="cd $HOME/Dropbox/notes/pomodoro/2021_driver && vim results.md +\
 alias notes="cd $HOME/Dropbox/notes && ls -al"
 
 alias learn="cd $HOME/Dropbox/learn && l"
-alias blog="cd $HOME/Code/jasonzurita.github.io && docker-compose up"
+alias blog="cd $HOME/Code/jasonzurita.github.io && docker compose up"
 
-alias vimgrep="$HOME/Work/scripts/vimgrep.sh"
+alias vimgrep="$HOME/code/dotfiles/scripts/vimgrep.sh"
 
 alias gitforceup="git add . && git commit --amend --no-edit && git push -f"
+
+alias claude-home="CLAUDE_CONFIG_DIR=~/.claude-home claude"
 
 alias sformat="swiftformat . --config .swiftformat"
 # Open man page in vim (e.g., man open)
@@ -33,34 +35,24 @@ export EDITOR=vim
 
 export WORKON_HOME=$HOME/.virtualenvs
 
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
 # Add Dart language server to path
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Add ctags to path (for some reason the Xcode ctags was being referenced...)
 export PATH="$PATH":"/usr/local/bin/ctags"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 # Set Flutter Path environment variable
 export PATH="/usr/local/flutter/bin:$PATH"
 
 # Set up node version manager [nvm](https://github.com/nvm-sh/nvm#git-install)
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
 export PATH="/usr/local/opt/llvm/bin:$PATH"
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # Setup homebrew for M1 (setup for hombrew-ed installed tools must come after this)
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Setup go
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$(go env GOPATH)/bin
 
 # Setup for [pyenv](https://github.com/pyenv/pyenv)
 eval "$(pyenv init --path)"
@@ -68,21 +60,29 @@ eval "$(pyenv init -)"
 export VIRTUALENVWRAPPER_PYTHON=$HOME/.pyenv/shims/python
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 
-# asdf setup
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# asdf setup (0.15+: binary in PATH via brew shellenv; add completions)
+fpath=(/opt/homebrew/opt/asdf/share/zsh/site-functions $fpath)
 
 # Setup for rbenv
 eval "$(rbenv init -)"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jasonzurita/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jasonzurita/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/jasonzurita/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jasonzurita/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 export PATH=~/Library/Android/sdk/tools:$PATH
 export PATH=~/Library/Android/sdk/platform-tools:$PATH
 
-export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+export PATH="$HOME/.local/bin:$PATH"
 
 echo "done"
