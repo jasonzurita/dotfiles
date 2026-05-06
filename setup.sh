@@ -63,4 +63,44 @@ fi
 # make scripts executable
 chmod +x "$DOTFILES/scripts/vimgrep.sh"
 
+# claude-home config (symlink individual files, not the whole dir)
+echo -n "Setting up .claude-home..."
+mkdir -p "$HOME/.claude-home/skills"
+
+for FILE in CLAUDE.md settings.json; do
+    if [ -a "$HOME/.claude-home/$FILE" ]; then
+        if [ -h "$HOME/.claude-home/$FILE" ]; then
+            echo " $FILE symlink exists."
+        else
+            echo " $FILE is not a symlink! You should probably fix that."
+        fi
+    else
+        ln -s "$DOTFILES/claude-home/$FILE" "$HOME/.claude-home/$FILE"
+        echo " $FILE linked."
+    fi
+done
+
+if [ -h "$HOME/.claude-home/skills" ]; then
+    echo " skills symlink exists."
+elif [ -d "$HOME/.claude-home/skills" ] && [ ! -h "$HOME/.claude-home/skills" ]; then
+    echo " skills is not a symlink! You should probably fix that."
+else
+    ln -s "$DOTFILES/claude-home/skills" "$HOME/.claude-home/skills"
+    echo " skills linked."
+fi
+
+# mobile/iOS project conventions CLAUDE.md
+echo -n "Setting up ~/Code/mobile/CLAUDE.md..."
+mkdir -p "$HOME/Code/mobile"
+if [ -a "$HOME/Code/mobile/CLAUDE.md" ]; then
+    if [ -h "$HOME/Code/mobile/CLAUDE.md" ]; then
+        echo " symlink exists."
+    else
+        echo " is not a symlink! You should probably fix that."
+    fi
+else
+    ln -s "$DOTFILES/claude-home/mobile-CLAUDE.md" "$HOME/Code/mobile/CLAUDE.md"
+    echo " linked."
+fi
+
 echo "Done."
