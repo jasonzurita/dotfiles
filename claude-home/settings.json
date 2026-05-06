@@ -1,0 +1,7 @@
+{
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": true
+  },
+  "editorMode": "vim",
+  "agentPushNotifEnabled": true
+}
