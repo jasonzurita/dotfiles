@@ -7,7 +7,7 @@ alias notes="cd $HOME/Dropbox/notes && ls -al"
 alias learn="cd $HOME/Dropbox/learn && l"
 alias blog="cd $HOME/Code/jasonzurita.github.io && docker compose up"
 
-alias vimgrep="$HOME/code/dotfiles/scripts/vimgrep.sh"
+alias vimgrep="$HOME/Code/dotfiles/scripts/vimgrep.sh"
 
 alias gitforceup="git add . && git commit --amend --no-edit && git push -f"
 
